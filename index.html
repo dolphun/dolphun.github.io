@@ -3,23 +3,30 @@
 <head>
 <meta charset="UTF-8">
 <title>5秒后跳转到另一个页面</title>
-</head>
-<script>
-var t = 5;
-var s = '.';
-timeID=setInterval("countDown()",1000);
-function countDown(){
-time.innerHTML= t +"秒后跳转"+s;
-t--;
-s+='.';
-if (t==0) {
-location.href="https://www.yuque.com/hhrooo"; //【要跳转的网站】
-clearInterval(timeID);
-}
-}
+<script language="javascript" type="text/javascript"> 
+var second = document.getElementById('totalSecond').textContent; 
+  
+if (navigator.appName.indexOf("Explorer") > -1)  { 
+    second = document.getElementById('totalSecond').innerText; 
+} else { 
+    second = document.getElementById('totalSecond').textContent; 
+} 
+  
+setInterval("redirect()", 1000); 
+function redirect() { 
+if (second < 0) { 
+    location.href = 'hello.html'; 
+} else { 
+    if (navigator.appName.indexOf("Explorer") > -1) { 
+        document.getElementById('totalSecond').innerText = second--; 
+    } else { 
+        document.getElementById('totalSecond').textContent = second--; 
+    } 
+} 
+} 
 </script>
+</head>
 <body>
-<div><font ID="time" face="impact" color="#272822" size="7">即将跳转</font>
-</div>
+<div><font ID="time" face="impact" color="#272822" size="7">即将跳转</font></div>
 </body>
 </html>
