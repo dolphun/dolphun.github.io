@@ -1,32 +1,28 @@
 <!DOCTYPE html>
+<!--STATUS OK-->
 <html>
 <head>
-<meta charset="UTF-8">
-<title>5秒后跳转到另一个页面</title>
-<script language="javascript" type="text/javascript"> 
-var second = document.getElementById('totalSecond').textContent; 
-  
-if (navigator.appName.indexOf("Explorer") > -1)  { 
-    second = document.getElementById('totalSecond').innerText; 
-} else { 
-    second = document.getElementById('totalSecond').textContent; 
-} 
-  
-setInterval("redirect()", 1000); 
-function redirect() { 
-if (second < 0) { 
-    location.href = 'hello.html'; 
-} else { 
-    if (navigator.appName.indexOf("Explorer") > -1) { 
-        document.getElementById('totalSecond').innerText = second--; 
-    } else { 
-        document.getElementById('totalSecond').textContent = second--; 
-    } 
-} 
-} 
-</script>
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8">
+<title>红梦园空间站</title>
+
+<script type="text/javascript">
+		onload=function(){
+			setInterval(go, 1000);
+		};
+		var x=1; //全局变量
+		function go(){
+		x--;
+			if(x>0){
+			document.getElementById("sp").innerHTML=x;
+			}else{
+			location.href='https://www.yuque.com/hhrooo';
+			}
+		}
+	</script>
+ 
 </head>
 <body>
-<div><font ID="time" face="impact" color="#272822" size="7">即将跳转</font></div>
+
 </body>
 </html>
